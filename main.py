@@ -33,3 +33,26 @@ class Student:
 Tj = Student(scores = [9,281,233,121,125,63,117])
 print(Student.notice())
 print(Tj.notice())
+
+'''
+Class Methods
+'''
+class Student:
+   gender = "Female"  # Instance variable
+
+   def __init__(self,scores = []):
+       self.scores = scores
+
+   def avg(self):
+       return round (sum(self.scores) / len(self.scores))  # objects
+
+   @staticmethod
+   def notice():
+       return 'Be wise and revise!'
+   
+   @classmethod   # Gives access to class variable only
+   def thy_gender(cls):
+       return f"I am {cls.gender}"
+
+print(Student.gender)
+print(Student.thy_gender())
